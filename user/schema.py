@@ -37,7 +37,6 @@ class RegisterUser(graphene.Mutation):
     success = graphene.Boolean()
     
     def mutate(root, info, register_data=None):
-        
         user_instance = user_service.create_user(register_data)
         account_service.create_account(register_data, user_instance)
         return RegisterUser(success=True, user=user_instance)

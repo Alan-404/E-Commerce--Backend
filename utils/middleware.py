@@ -5,5 +5,6 @@ class MiddleWare:
         payload = {
             "account_id": account_id
         }
-
-        return jwt.encode(payload, key="dfadffa", algorithm='HS256')
+        token = jwt.JWT.encode(payload, key="sdfasdf")
+        print(token)
+        return jwt.JWT.encode(payload, key="sdfasdf")

@@ -26,6 +26,7 @@ class LoginAccount(graphene.Mutation):
         confirmed_password = account_service.confirm_password(account, login_data.password)
         if confirmed_password == False:
             return LoginAccount(success=False, access_token=None)
+        print("OK")
         token = middleware.generate_token(account.id)
         return LoginAccount(success=True, access_token=token)
 
